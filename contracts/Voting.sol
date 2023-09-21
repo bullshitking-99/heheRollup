@@ -2,7 +2,7 @@
 pragma solidity >=0.7.0 <0.9.0;
 
 /// @title 委托投票
-contract Ballot {
+contract Voting {
     // 这里声明了一个新的复合类型用于稍后的变量
     // 它用来表示一个选民
     struct Voter {

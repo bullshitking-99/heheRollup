@@ -1,20 +1,15 @@
 module.exports = {
   networks: {
-    loc_development_development: {
-      network_id: "*",
-      port: 7545,
-      host: "127.0.0.1"
+    development: {
+      host: "127.0.0.1", // Localhost (default: none)
+      port: 7545, // Standard Ethereum port (default: none)
+      network_id: "5777", // Any network (default: none)
     },
-    loc_develop_develop: {
-      network_id: "*",
-      port: 7545,
-      host: "127.0.0.1"
-    }
   },
   mocha: {},
   compilers: {
     solc: {
-      version: "0.8.13"
-    }
-  }
+      version: "0.8.13",
+    },
+  },
 };
