@@ -23,7 +23,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -47,7 +48,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -81,7 +83,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -133,7 +136,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -146,7 +150,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"proposalNames\",\"type\":\"bytes32[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"chairperson\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"delegate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"voter\",\"type\":\"address\"}],\"name\":\"giveRightToVote\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"proposals\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"name\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"voteCount\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"proposal\",\"type\":\"uint256\"}],\"name\":\"vote\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"voters\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"weight\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"voted\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"delegate\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"vote\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"winnerName\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"winnerName_\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"winningProposal\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"winningProposal_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"winningProposal()\":{\"details\":\"\\u7ed3\\u5408\\u4e4b\\u524d\\u6240\\u6709\\u7684\\u6295\\u7968\\uff0c\\u8ba1\\u7b97\\u51fa\\u6700\\u7ec8\\u80dc\\u51fa\\u7684\\u63d0\\u6848\"}},\"title\":\"\\u59d4\\u6258\\u6295\\u7968\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"\\u4e3a `proposalNames` \\u4e2d\\u7684\\u6bcf\\u4e2a\\u63d0\\u6848\\uff0c\\u521b\\u5efa\\u4e00\\u4e2a\\u65b0\\u7684\\uff08\\u6295\\u7968\\uff09\\u8868\\u51b3\"},\"delegate(address)\":{\"notice\":\"\\u628a\\u4f60\\u7684\\u6295\\u7968\\u59d4\\u6258\\u5230\\u6295\\u7968\\u8005 `to`\\u3002\"},\"vote(uint256)\":{\"notice\":\"\\u628a\\u4f60\\u7684\\u7968(\\u5305\\u62ec\\u59d4\\u6258\\u7ed9\\u4f60\\u7684\\u7968)\\uff0c \\u6295\\u7ed9\\u63d0\\u6848 `proposals[proposal].name`.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Voting.sol\":\"Voting\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Voting.sol\":{\"keccak256\":\"0xdc015bdfc0a1868190d3d984c42a8ad5f9732fbb6e7a14ba63c85e6cf5350cfd\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://bdaab0f5117c44542fbfbec7ae71a23544a8da5c1f05b2196505c9c14d5263a1\",\"dweb:/ipfs/QmbXDxEG7hCYpDazNybnoGhrTUrYFdXgVYjmEm8Xv3YVQR\"]}},\"version\":1}",
@@ -11430,9 +11435,16 @@
     "name": "solc",
     "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x776352A55253Be796EA920847eC018671D998C3C",
+      "transactionHash": "0x523ddceaa22f408c0aaa9b80b5a4774e0b6320016b81ae5d9f804116c73d2ebb"
+    }
+  },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2023-09-21T04:07:04.165Z",
+  "updatedAt": "2023-09-22T04:26:21.434Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
