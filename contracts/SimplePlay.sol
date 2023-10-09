@@ -9,6 +9,7 @@ contract Coin {
     mapping(address => uint) public balances;
 
     // 轻客户端可以通过事件针对变化作出高效的反应
+    // Events are a way for your contract to communicate that something happened on the blockchain to your app front-end
     event Sent(address from, address to, uint amount);
 
     // 这是构造函数，只有当合约创建时运行
