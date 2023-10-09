@@ -3,6 +3,8 @@ pragma solidity ^0.8.4;
 
 contract Coin {
     // 关键字“public”让这些变量可以从外部读取
+    // You can declare an array as public, and Solidity will automatically create a getter method for it.
+    // Other contracts would then be able to read from, but not write to, this array.
     address public minter;
     mapping(address => uint) public balances;
 
