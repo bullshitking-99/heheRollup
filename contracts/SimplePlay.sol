@@ -16,6 +16,9 @@ contract Coin {
         minter = msg.sender;
     }
 
+    // In Solidity, functions are public by default.
+    // This means anyone (or any other contract) can call your contract's function and execute its code.
+    // on the other hands, declare private means only other functions within our contract will be able to call this function
     function mint(address receiver, uint amount) public {
         require(msg.sender == minter);
         balances[receiver] += amount;
