@@ -13,6 +13,11 @@ contract Coin {
     event Sent(address from, address to, uint amount);
 
     // 这是构造函数，只有当合约创建时运行
+    /**
+    In Solidity, function execution always needs to start with an external caller. 
+    A contract will just sit on the blockchain doing nothing until someone calls one of its functions. 
+    So there will always be a msg.sender. 
+    */
     constructor() {
         minter = msg.sender;
     }
