@@ -27,6 +27,7 @@ contract Voting {
     Proposal[] public proposals;
 
     /// 为 `proposalNames` 中的每个提案，创建一个新的（投票）表决
+    // 构造函数参数在 deploy_contract.js 中作为deplyer.deploy的参数填入
     constructor(bytes32[] memory proposalNames) {
         chairperson = msg.sender;
         voters[chairperson].weight = 1;
@@ -41,6 +42,8 @@ contract Voting {
 
     // 授权 `voter` 对这个（投票）表决进行投票
     // 只有 `chairperson` 可以调用该函数。
+    // external - 相对于 public - 只有合约外的函数可以调用
+    // internal - 相对于 private - 继承子合约也可以调用
     function giveRightToVote(address voter) external {
         // 若 `require` 的第一个参数的计算结果为 `false`，
         // 则终止执行，撤销所有对状态和以太币余额的改动。
@@ -110,6 +113,8 @@ contract Voting {
     }
 
     /// @dev 结合之前所有的投票，计算出最终胜出的提案
+    // different with js, solidity returns the pre-declare value, no need to return again in function body
+    // besides, in Solidity you can return more than one value from a function.
     function winningProposal() public view returns (uint winningProposal_) {
         uint winningVoteCount = 0;
         for (uint p = 0; p < proposals.length; p++) {
