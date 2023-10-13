@@ -35,7 +35,7 @@ contract BlindAuction {
 
     /// 使用 modifier 可以更便捷的校验函数的入参。
     /// `onlyBefore` 会被用于后面的 `bid` 函数：
-    /// 新的函数体是由 modifier 本身的函数体，并用原函数体替换 `_;` 语句来组成的。
+    /// 新的函数体是由 modifier 本身的函数体，并用原函数体替换 `_;` 语句来组成的。由此一来modifier会在载体函数中率先执行
     modifier onlyBefore(uint time) {
         if (block.timestamp >= time) revert TooLate(time);
         _;
