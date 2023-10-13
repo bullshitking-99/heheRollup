@@ -5,6 +5,8 @@ pragma solidity >=0.7.0 <0.9.0;
 contract Voting {
     // 这里声明了一个新的复合类型用于稍后的变量
     // 它用来表示一个选民
+    // btw, 把uint类型显示声明如uint32，再放在一个struct里可以减小内存，节约gas
+    // 且同类型如  uint c; uint32 a; uint32 b; 会比 uint32 a; uint c; uint32 b 更节省，因为 uint32 聚在一起
     struct Voter {
         uint weight; // 计票的权重
         bool voted; // 若为真，代表该人已投票
