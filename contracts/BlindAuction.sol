@@ -33,9 +33,10 @@ contract BlindAuction {
     /// The function auctionEnd has already been called.
     error AuctionEndAlreadyCalled();
 
-    /// 使用 modifier 可以更便捷的校验函数的入参。
+    /// 使用 modifier 可以更便捷地修改函数的行为，且可以接受参数，如这里校验函数的入参。
     /// `onlyBefore` 会被用于后面的 `bid` 函数：
-    /// 新的函数体是由 modifier 本身的函数体，并用原函数体替换 `_;` 语句来组成的。由此一来modifier会在载体函数中率先执行
+    /// 新的函数体是由 modifier 本身的函数体，并用原函数体替换 `_;` 语句来组成的。
+    // _; 并非只能放在modifier末尾，可自由放置，灵活组织，这也是需要显式声明的原因
     modifier onlyBefore(uint time) {
         if (block.timestamp >= time) revert TooLate(time);
         _;
