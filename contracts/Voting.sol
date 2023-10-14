@@ -115,8 +115,9 @@ contract Voting {
     }
 
     /// @dev 结合之前所有的投票，计算出最终胜出的提案
-    // different with js, solidity returns the pre-declare value, no need to return again in function body
+    // different with js, solidity can additionally returns the pre-declare value, no need to return again in function body
     // besides, in Solidity you can return more than one value from a function.
+    //  有趣的是，view 函数在被外部调用时（区别于内部调用）不会消耗任何gas，it only needs to query your local Ethereum node to run the function
     function winningProposal() public view returns (uint winningProposal_) {
         uint winningVoteCount = 0;
         for (uint p = 0; p < proposals.length; p++) {
