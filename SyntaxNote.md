@@ -38,3 +38,12 @@
 ### payable modifier
 
 > a special type of function that can receive Ether.
+
+---
+
+## gas 优化
+
+### 在 struct 中打包 uint
+
+> uint 默认为 256，太大了，且平时即使显式声明 uint8，uint16 等，也不会节省空间，但在 struct 中打包可以
+> uint8 能代表的最大数是 2^8 = 256; uint16 则为 2^16 = 65536; 酱紫来算的
