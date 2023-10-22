@@ -72,12 +72,13 @@
 
 一种解决方法是，使用 OpenZeppelin 的 SafeMath ，它的 library 之一。
 
-> A library is a special type of contract in Solidity. One of the things it is useful for is to attach functions to native data types.
+> A library is a special type of contract in Solidity. One of the things it is useful for is to attach functions to native data types, , by using the `using` keyword
 
 ```typescript
 using SafeMath for uint256;
 
 uint256 a = 5;
+// 注意下面的 a 会自动作为 add 函数的第一个参数
 uint256 b = a.add(3); // 5 + 3 = 8
 uint256 c = a.mul(2); // 5 * 2 = 10
 ```
