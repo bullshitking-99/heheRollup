@@ -61,3 +61,23 @@
 - 设定代理
   - `function approve(address _approved, uint256 _tokenId) external payable;`
   - 调用 approve 会存储代理，如`mapping (uint256 => address)`，再次调用 transferFrom 时检查代理表
+
+---
+
+## 安全问题 overflow & underflow
+
+> 由于 uint 是无符号整数，超出定义限制的操作会导致数值发生反常规的变化
+> 如 uint8 11111111 = 255 ，将其++，会得到 00000000 = 0；
+> 反之将 uint8 00000000 = 0 , --, 会得到 11111111 = 255；
+
+一种解决方法是，使用 OpenZeppelin 的 SafeMath ，它的 library 之一。
+
+> A library is a special type of contract in Solidity. One of the things it is useful for is to attach functions to native data types.
+
+```typescript
+using SafeMath for uint256;
+
+uint256 a = 5;
+uint256 b = a.add(3); // 5 + 3 = 8
+uint256 c = a.mul(2); // 5 * 2 = 10
+```
