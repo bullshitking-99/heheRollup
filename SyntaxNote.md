@@ -48,6 +48,7 @@
 - `storage`, suit for state variables that store on the blockchain, and it's automatically interpreted.
 - `memory`, reserved for variables that are defined within the scope of a function.
 - `Calldata`, immutable, temporary location where function arguments are stored, and behaves mostly like `memory`.
+  - `calldata` 作为区块链的[历史日志（Log）部分](https://docs.soliditylang.org/en/latest/introduction-to-smart-contracts.html#logs)，不会存储为以太坊状态的一部分，但可在区块链外部进行访问，因此既能保证数据可用性，又节省了 gas, 用于在卷叠中向链上合约递交交易数据.
 
 ---
 
