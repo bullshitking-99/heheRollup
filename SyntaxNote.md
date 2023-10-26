@@ -41,6 +41,16 @@
 
 ---
 
+## 数据位置 data location
+
+> how your variables and data are handled by the EVM, influence gas cost & storage layout.
+
+- `storage`, suit for state variables that store on the blockchain, and it's automatically interpreted.
+- `memory`, reserved for variables that are defined within the scope of a function.
+- `Calldata`, immutable, temporary location where function arguments are stored, and behaves mostly like `memory`.
+
+---
+
 ## gas 优化
 
 ### 在 struct 中打包 uint
